@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Usuario_Dominio/1.0.0": {
+        "runtime": {
+          "Usuario_Dominio.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Usuario_Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
