@@ -36,5 +36,19 @@ namespace Usuario_Presentacion.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> EliminarUsuario(string id)
+        {
+            try
+            {
+                var command = new EliminarUsuarioCommand(id);
+                await _mediator.Send(command);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }

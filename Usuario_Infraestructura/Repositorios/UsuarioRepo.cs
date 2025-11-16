@@ -51,5 +51,15 @@ namespace Usuario_Infraestructura.Repositorios
             }
             _logger.LogDebug("Usuario actualizado con ID: {UsuarioId}", usuario.Id);
         }
+        public async Task EliminarAsync(Usuario usuario)
+        {
+            var resultado = await _usuarios.DeleteOneAsync(u => u.Id == usuario.Id);
+            if (resultado.DeletedCount == 0)
+            {
+                _logger.LogWarning("Intento de eliminar usuario no existente con ID: {UsuarioId}", usuario.Id);
+                throw new InvalidOperationException($"Usuario con ID '{usuario.Id}' no encontrado para eliminar.");
+            }
+            _logger.LogDebug("Usuario eliminado con ID: {UsuarioId}", usuario.Id);
+        }
     }
 }
