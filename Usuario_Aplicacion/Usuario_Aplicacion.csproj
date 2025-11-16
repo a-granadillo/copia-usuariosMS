@@ -15,10 +15,4 @@
     <ProjectReference Include="..\Usuario_Dominio\Usuario_Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Handlers\" />
-  </ItemGroup>
-
 </Project>

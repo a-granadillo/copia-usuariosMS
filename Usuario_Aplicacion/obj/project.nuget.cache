@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4KQFt7Ni100=",
+  "dgSpecHash": "ghrH7ddkCpY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Aplicacion\\Usuario_Aplicacion.csproj",
+  "projectFilePath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Aplicacion\\Usuario_Aplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sarah\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\sarah\\.nuget\\packages\\mediatr\\13.1.0\\mediatr.13.1.0.nupkg.sha512",

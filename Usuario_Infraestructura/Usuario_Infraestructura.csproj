@@ -14,10 +14,4 @@
     <ProjectReference Include="..\Usuario_Dominio\Usuario_Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configuracion\" />
-    <Folder Include="Mapping\" />
-    <Folder Include="Repositorios\" />
-  </ItemGroup>
-
 </Project>
