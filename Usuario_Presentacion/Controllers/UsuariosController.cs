@@ -19,7 +19,22 @@ namespace Usuario_Presentacion.Controllers
             var usuarioDto = await _mediator.Send(command);
             return CreatedAtAction(nameof(CrearUsuario), new { id = usuarioDto.Id }, usuarioDto);
         }
-        
-        
+        [HttpPut("{id}")]
+        public async Task<IActionResult> ActualizarUsuario(string id, [FromBody] ActualizarUsuarioCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest("El id de la ruta no coincide con el del cuerpo de la solicitud.");
+            }
+            try
+            {
+                var usuarioDto = await _mediator.Send(command);
+                return Ok(usuarioDto);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }
