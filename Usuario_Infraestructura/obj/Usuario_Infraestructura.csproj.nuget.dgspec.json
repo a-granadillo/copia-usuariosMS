@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj": {}
+    "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Dominio\\Usuario_Dominio.csproj": {
+    "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\Usuario_Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Dominio\\Usuario_Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\Usuario_Dominio.csproj",
         "projectName": "Usuario_Dominio",
-        "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Dominio\\Usuario_Dominio.csproj",
+        "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\Usuario_Dominio.csproj",
         "packagesPath": "C:\\Users\\sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Dominio\\obj\\",
+        "outputPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj": {
+    "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj",
+        "projectUniqueName": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj",
         "projectName": "Usuario_Infraestructura",
-        "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj",
+        "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj",
         "packagesPath": "C:\\Users\\sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\obj\\",
+        "outputPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Dominio\\Usuario_Dominio.csproj": {
-                "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Dominio\\Usuario_Dominio.csproj"
+              "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\Usuario_Dominio.csproj": {
+                "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\Usuario_Dominio.csproj"
               }
             }
           }

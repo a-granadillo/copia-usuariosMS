@@ -1437,11 +1437,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Presentacion\\Usuario_Presentacion.csproj",
+      "projectUniqueName": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Presentacion\\Usuario_Presentacion.csproj",
       "projectName": "Usuario_Presentacion",
-      "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Presentacion\\Usuario_Presentacion.csproj",
+      "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Presentacion\\Usuario_Presentacion.csproj",
       "packagesPath": "C:\\Users\\sarah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Presentacion\\obj\\",
+      "outputPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Presentacion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1462,11 +1462,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Aplicacion\\Usuario_Aplicacion.csproj": {
-              "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Aplicacion\\Usuario_Aplicacion.csproj"
+            "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Aplicacion\\Usuario_Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Aplicacion\\Usuario_Aplicacion.csproj"
             },
-            "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj": {
-              "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Usuario - Copy\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj"
+            "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj": {
+              "projectPath": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Usuario_Infraestructura.csproj"
             }
           }
         }
