@@ -41,6 +41,15 @@ namespace Usuario_Infraestructura.Repositorios
             await _usuarios.InsertOneAsync(usuario);
             _logger.LogDebug("Usuario agregado con ID: {UsuarioId}", usuario.Id);
         }
-        
+        public async Task ActualizarAsync(Usuario usuario)
+        {
+            var resultado = await _usuarios.ReplaceOneAsync(u => u.Id == usuario.Id, usuario);
+            if (resultado.MatchedCount == 0)
+            {
+                _logger.LogWarning("Intento de actualizar usuario no existente con ID: {UsuarioId}", usuario.Id);
+                throw new InvalidOperationException($"Usuario con ID '{usuario.Id}' no encontrado para actualizar.");
+            }
+            _logger.LogDebug("Usuario actualizado con ID: {UsuarioId}", usuario.Id);
+        }
     }
 }

@@ -22,12 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,7 +32,7 @@
               "RelativeDocumentMoniker": "Usuario_Presentacion\\Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Presentacion\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "Usuario_Presentacion\\Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T16:22:30.12Z",
               "EditorCaption": ""
@@ -49,7 +45,7 @@
               "RelativeDocumentMoniker": "Usuario_Infraestructura\\Repositorios\\UsuarioRepo.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Infraestructura\\Repositorios\\UsuarioRepo.cs",
               "RelativeToolTip": "Usuario_Infraestructura\\Repositorios\\UsuarioRepo.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwDQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwCsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T16:22:13.948Z",
               "EditorCaption": ""
@@ -62,10 +58,14 @@
               "RelativeDocumentMoniker": "Usuario_Dominio\\Repositorios\\IUsuarioRepo.cs",
               "ToolTip": "C:\\Users\\sarah\\OneDrive\\Desktop\\Proyecto\\UsuariosMS\\Usuario_Dominio\\Repositorios\\IUsuarioRepo.cs",
               "RelativeToolTip": "Usuario_Dominio\\Repositorios\\IUsuarioRepo.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T16:22:00.278Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
