@@ -14,6 +14,6 @@ namespace Usuario_Dominio.Repositorios
         Task<Usuario?> ObtenerPorCorreoAsync(Objetos_de_Valor.Correo correo);
         Task AgregarAsync(Usuario usuario);
         Task ActualizarAsync(Usuario usuario);
-        //Task EliminarAsync(Usuario usuario);
+        Task EliminarAsync(Usuario usuario);
     }
 }
