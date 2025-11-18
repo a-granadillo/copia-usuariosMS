@@ -1,0 +1,10 @@
+# Visual Studio y VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+
+# Compilación de .NET (¡Esto limpiará el 99% de tu pantalla!)
+**/bin/
+**/obj/
