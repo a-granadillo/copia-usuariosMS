@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Usuario_Aplicacion.Commands;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Usuario_Presentacion.Controllers
 {
@@ -48,6 +49,21 @@ namespace Usuario_Presentacion.Controllers
             catch (Exception ex)
             {
                 return NotFound(ex.Message);
+            }
+        }
+        [HttpGet("{id}/historial")]
+        [Authorize(Roles = "Usuario,Administrador,Soporte")]
+        public async Task<IActionResult> ObtenerHistorial(string id)
+        {
+            try
+            {
+                var command = new ObtenerHistorialActividadUsuarioCommand(id);
+                var resultado = await _mediator.Send(command);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error interno obteniendo historial: {ex.Message}");
             }
         }
     }

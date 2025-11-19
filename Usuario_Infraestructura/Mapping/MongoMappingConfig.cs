@@ -18,8 +18,8 @@ namespace Usuario_Infraestructura.Mapping
             var exceptions = new List<Exception>();
 
             var mappingTypes = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => t.IsClass && t.IsSealed && t.IsAbstract) // solo clases estáticas
-                .Where(t => t != typeof(MongoMappingConfig))         // excluimos esta clase
+                .Where(t => t.IsClass && t.IsSealed && t.IsAbstract) 
+                .Where(t => t != typeof(MongoMappingConfig))        
                 .Where(t => t.GetMethod("ConfigurarMapeos", BindingFlags.Public | BindingFlags.Static) != null);
 
             foreach (var type in mappingTypes)
@@ -31,7 +31,7 @@ namespace Usuario_Infraestructura.Mapping
                 }
                 catch (TargetInvocationException tie)
                 {
-                    // Capturamos la excepción interna lanzada por el método
+                    
                     exceptions.Add(new InvalidOperationException(
                         $"Error registrando el mapeo '{type.Name}': {tie.InnerException?.Message}", tie.InnerException));
                 }
@@ -44,7 +44,7 @@ namespace Usuario_Infraestructura.Mapping
 
             _isConfigured = true;
 
-            // Si hubo algún error, lanzamos un AggregateException
+
             if (exceptions.Any())
             {
                 throw new AggregateException("Se produjeron errores al registrar los mapas de MongoDB.", exceptions);
