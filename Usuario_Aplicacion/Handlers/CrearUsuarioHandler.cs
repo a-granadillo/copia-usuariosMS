@@ -26,15 +26,15 @@ namespace Usuario_Aplicacion.Handlers
         public async Task<UsuarioDto> Handle(CrearUsuarioCommand request, CancellationToken cancellationToken)
         {
             // Simulamos la creación en Keycloak y obtenemos un ID
-            var keycloakId = Guid.NewGuid().ToString();
             var nombre = new NombreCompleto(request.NombreCompleto);
             var correo = new Correo(request.Correo);
             var telefono = new NumTelefono(request.NumTelefono);
-            var usuario = new Usuario(id:keycloakId, nombreCompleto:nombre, correo:correo, numTelefono:telefono);
+
+            var usuario = new Usuario(id: request.IdUsuarioKeycloak, nombreCompleto:nombre, correo:correo, numTelefono:telefono, rol: request.rol);
 
             await _usuarioRepo.AgregarAsync(usuario);
-            _logger.LogInformation("Usuario creado con ID y correo: {UsuarioId}, {EmailEnmascarado} ", usuario.Id, Enmascarado.EmailEnmascarado(usuario.Correo.ToString()));
-            return new UsuarioDto{Id = usuario.Id, NombreCompleto = usuario.NombreCompleto.Valor, Correo = usuario.Correo.DireccionCorreo, NumTelefono = usuario.NumTelefono.Numero};
+            _logger.LogInformation("Usuario creado: {UsuarioId}, Rol={Rol}, {EmailEnmascarado} ", usuario.Id, request.rol, Enmascarado.EmailEnmascarado(usuario.Correo.ToString()));
+            return new UsuarioDto{Id = usuario.Id, NombreCompleto = usuario.NombreCompleto.Valor, Correo = usuario.Correo.DireccionCorreo, NumTelefono = usuario.NumTelefono.Numero, Rol = request.rol };
         }
     }
 }

@@ -8,5 +8,5 @@ using Usuario_Aplicacion.DTOs;
 
 namespace Usuario_Aplicacion.Commands
 {
-    public record CrearUsuarioCommand(string NombreCompleto, string Correo, string NumTelefono) : IRequest<UsuarioDto>;
+    public record CrearUsuarioCommand(string IdUsuarioKeycloak, string rol,string NombreCompleto, string Correo, string NumTelefono) : IRequest<UsuarioDto>;
 }

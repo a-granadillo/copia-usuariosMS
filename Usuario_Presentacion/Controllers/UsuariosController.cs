@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Usuario_Aplicacion.Commands;
+using Usuario_Aplicacion.Query;
 
 namespace Usuario_Presentacion.Controllers
 {
@@ -50,5 +51,15 @@ namespace Usuario_Presentacion.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObtenerUsuario(string id)
+        {
+            var query = new ObtenerUsuarioQuery(id);
+            var usuarioDto = await _mediator.Send(query);
+            if (usuarioDto == null)
+                return NotFound("Usuario no encontrado");
+            return Ok(usuarioDto);
+        }
+
     }
 }
