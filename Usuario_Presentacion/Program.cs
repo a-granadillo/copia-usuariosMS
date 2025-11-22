@@ -82,6 +82,7 @@ builder.Services.AddMediatR(cfg =>
 // 4. Repositorios
 builder.Services.AddScoped<IUsuarioRepo, UsuarioRepo>();
 builder.Services.AddScoped<IHistorialActividadRepo, HistorialActividadRepo>();
+builder.Services.AddScoped<IAuditoriaRepo, AuditoriaRepo>();
 
 var app = builder.Build();
 
