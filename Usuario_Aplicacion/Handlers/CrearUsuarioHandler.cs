@@ -19,8 +19,9 @@ namespace Usuario_Aplicacion.Handlers
         private readonly IUsuarioRepo _usuarioRepo;
         private readonly ILogger<CrearUsuarioHandler> _logger;
         private readonly IHistorialActividadRepo _historialRepo;
-        private readonly IMediator _mediator; // Necesario para llamar al comando de Auditoría
+        private readonly IMediator _mediator;
 
+        // 1. USAMOS TU CONSTRUCTOR (Con las 4 dependencias necesarias para auditoría)
         public CrearUsuarioHandler(
             IUsuarioRepo usuarioRepo,
             ILogger<CrearUsuarioHandler> logger,
@@ -35,39 +36,39 @@ namespace Usuario_Aplicacion.Handlers
 
         public async Task<UsuarioDto> Handle(CrearUsuarioCommand request, CancellationToken cancellationToken)
         {
-            // --- LÓGICA ORIGINAL (Intacta) ---
-            // Simulamos la creación en Keycloak y obtenemos un ID
-            var keycloakId = Guid.NewGuid().ToString();
+            // 2. USAMOS LA LÓGICA DE ELLA (Para crear los objetos y tomar el ID y ROL correctos)
             var nombre = new NombreCompleto(request.NombreCompleto);
             var correo = new Correo(request.Correo);
             var telefono = new NumTelefono(request.NumTelefono);
-            var usuario = new Usuario(id: keycloakId, nombreCompleto: nombre, correo: correo, numTelefono: telefono);
+
+            // OJO: Usamos request.IdUsuarioKeycloak (de ella) en vez de Guid.NewGuid (tuyo)
+            var usuario = new Usuario(id: request.IdUsuarioKeycloak, nombreCompleto: nombre, correo: correo, numTelefono: telefono, rol: request.rol);
 
             await _usuarioRepo.AgregarAsync(usuario);
 
-            // 1. Guardar en tu Historial
+            // 3. USAMOS TU LÓGICA (Para guardar historial y auditoría)
             var historial = new HistorialActividad(usuario.Id, "Cuenta de usuario creada");
             await _historialRepo.AgregarAsync(historial);
-            // 2. Mandar a Auditoría (Usando tu comando)
+
             var auditoriaCmd = new RegistrarAuditoriaCommand(
                 usuario.Id,
                 "Creación de Usuario",
                 "USUARIOS",
-                $"Se registró el usuario: {usuario.Correo}",
+                $"Se registró el usuario: {usuario.Correo} con Rol: {request.rol}",
                 "Info"
             );
             await _mediator.Send(auditoriaCmd, cancellationToken);
 
-            // ----------------------------------
-
-            _logger.LogInformation("Usuario creado con ID y correo: {UsuarioId}, {EmailEnmascarado} ", usuario.Id, Enmascarado.EmailEnmascarado(usuario.Correo.ToString()));
-
-            return new UsuarioDto
-            {
-                Id = usuario.Id,
-                NombreCompleto = usuario.NombreCompleto.Valor,
-                Correo = usuario.Correo.DireccionCorreo,
-                NumTelefono = usuario.NumTelefono.Numero
+            // 4. LOG Y RETORNO DE ELLA (Para incluir el Rol en la respuesta)
+            _logger.LogInformation("Usuario creado: {UsuarioId}, Rol={Rol}, {EmailEnmascarado} ", usuario.Id, request.rol, Enmascarado.EmailEnmascarado(usuario.Correo.ToString()));
+            
+            return new UsuarioDto 
+            { 
+                Id = usuario.Id, 
+                NombreCompleto = usuario.NombreCompleto.Valor, 
+                Correo = usuario.Correo.DireccionCorreo, 
+                NumTelefono = usuario.NumTelefono.Numero, 
+                Rol = request.rol 
             };
         }
     }

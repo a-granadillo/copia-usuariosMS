@@ -11,6 +11,17 @@ using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<CrearUsuarioCommand>());
+builder.Services.Configure<MongoConfig>(builder.Configuration.GetSection("MongoConfig"));
+builder.Services.AddSingleton(sp => sp.GetRequiredService<IOptions<MongoConfig>>().Value);
+builder.Services.AddSingleton<IUsuarioRepo, UsuarioRepo>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<ObtenerUsuarioQuery>());
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

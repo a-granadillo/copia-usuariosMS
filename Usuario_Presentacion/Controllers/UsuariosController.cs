@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Usuario_Aplicacion.Commands;
 using Microsoft.AspNetCore.Authorization;
+using Usuario_Aplicacion.Query;
 
 namespace Usuario_Presentacion.Controllers
 {
@@ -66,5 +67,15 @@ namespace Usuario_Presentacion.Controllers
                 return StatusCode(500, $"Error interno obteniendo historial: {ex.Message}");
             }
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObtenerUsuario(string id)
+        {
+            var query = new ObtenerUsuarioQuery(id);
+            var usuarioDto = await _mediator.Send(query);
+            if (usuarioDto == null)
+                return NotFound("Usuario no encontrado");
+            return Ok(usuarioDto);
+        }
+
     }
 }
